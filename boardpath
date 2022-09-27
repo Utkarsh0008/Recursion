@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class board_path {
+static int count=0;
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		int target =sc.nextInt();
+		int faces =sc.nextInt();
+		String ans="";
+		path(target,faces,ans);
+		System.out.println();
+System.out.println(count);
+	}
+
+	private static void path(int target, int faces,String ans) {
+		//1st base case 
+		if(target==0) {
+			System.out.print(ans+" ");    //target 0 hote hi reverse
+			count++;
+			return;
+		}
+		//2nd base case 
+		if(target<0) {
+			return;    //target 0 se chota hote hi bahar
+		}
+		for (int i = 1; i <=faces; i++) {
+			path(target-i, faces, ans+i);  //for many calls rec ko loop mei daal dia
+		}
+		
+		//samjhane ke liye for 3 faces 3rec call lagyi
+//		path(target-1, faces, ans+"1");
+//		path(target-2, faces, ans+"2");
+//		path(target-3, faces, ans+"3");
+//		
+		
+	}
+
+}
