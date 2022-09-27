@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class print_subseq {
+      public static int count=0;
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str=sc.next();
+		String ans="";
+		printsub(str,ans);
+		System.out.println();
+		System.out.println(count);
+
+	}
+
+	private static void printsub(String str,String ans) {
+     //base case
+		//ki agr length 0 hojaye string ki to ans print krra dege
+		if(str.length()==0) {
+			System.out.print(ans+" ");  
+			count++;
+			return;
+		}
+		char ch=str.charAt(0);  
+		printsub(str.substring(1), ans);    
+		printsub(str.substring(1), ans+ch);
+		
+		
+	}
+
+}
