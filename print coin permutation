@@ -12,12 +12,12 @@ public class print_permutation {
 
 	private static void printpermutation(int[] arr, int amount, String ans) {
 		
-			 if(amount==0) {
+			 if(amount==0) {   
 		    	  System.out.println(ans);  //first base case
 		    	  return;
 		      }
 			 for (int j = 0; j < arr.length; j++) {
-				 if(amount>=arr[j])
+				 if(amount>=arr[j])   // coin tbhi select krege jb amount se chota hoga ie rec call tbhi lgega
 		      printpermutation(arr, amount-arr[j], ans+arr[j]); //for loop is used for multiple recursion call
 		}
      
