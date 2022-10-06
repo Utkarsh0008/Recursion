@@ -1,0 +1,24 @@
+
+SAME AS QUEEN PERMUTATION
+
+public class print_permutation {
+
+	public static void main(String[] args) {
+		int []arr= {2,3,4,6};
+		int target=10;
+		String ans="";
+    printpermutation(arr,target,ans);
+	}
+
+	private static void printpermutation(int[] arr, int amount, String ans) {
+		
+			 if(amount==0) {
+		    	  System.out.println(ans);  //first base case
+		    	  return;
+		      }
+			 for (int j = 0; j < arr.length; j++) {
+				 if(amount>=arr[j])
+		      printpermutation(arr, amount-arr[j], ans+arr[j]); //for loop is used for multiple recursion call
+		}
+     
+	}
